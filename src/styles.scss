@@ -1,0 +1,138 @@
+@import 'assets/scss/link';
+
+
+
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a{
+  text-decoration: none;
+  color:$main-color;
+}
+
+li{
+  list-style: none;
+}
+
+html,body{
+ @include square(100%);
+  overflow-x: hidden;
+  overflow-y: auto;
+  &::-webkit-scrollbar-thumb{
+    background-color: $white-700;
+  }
+  &::-webkit-scrollbar{
+    width: 8px;
+  }
+  &::-webkit-scrollbar-track{
+    background-color: transparent;
+  }
+}
+
+app-home{
+  background-color: $white;
+}
+
+app-hero, {
+  width: 100%;
+}
+
+app-tab-side-bar-ui{
+  flex: 1;
+  height: 100%;
+  //@include size(100%, 15%);
+  max-width: 300px;
+}
+
+h1,h2,h3,h4,h5,h6{
+
+   em {
+     background-color: $highlight;
+     border-radius: 2px;
+     padding: 0.05em;
+     font-style: normal;
+   }
+
+}
+
+.active-link{
+    color:$success!important;
+    transition: color .3s ease-in-out;
+  }
+
+
+.notFound{
+  @include font($noto-sans-jp-font, $main-color, $fm_size_desk-24,600);
+}
+
+.content{
+  @include flex(center, column);
+  max-width: $mx-content-width;
+  gap: 2em;
+  .content_box{
+    width: 40%;
+    min-width: 800px;
+    @include flex(start, column);
+    align-items: flex-start;
+    gap: 1em;
+    .content_title{
+      @include font($main-font, $main-color, $fm_size_desk-32,600);
+    }
+    .content_text{
+      @include font($main-font, $main-color, $fm_size_desk-24,400);
+      a{
+        color:$main-color;
+        text-decoration: underline;
+        &:hover{
+          color:$success;
+        }
+      }
+    }
+    .sub_content{
+      @include font($main-font, $main-color, $fm_size_desk-20,400);
+    }
+  }
+}
+
+@media screen and (min-width: 1600px){
+  .content{
+
+    .content_box{
+      .content_title{
+        font-size: 32px;
+      }
+      .content_text{
+        font-size: 24px;
+      }
+      .sub_content{
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1020px){
+  .content{
+    max-width: 100%;
+    width: 100%;
+    .content_box{
+      min-width: 100%;
+      .content_title{
+        font-size: 20px;
+      }
+      .content_text{
+        font-size: 16px;
+      }
+      .sub_content{
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+
+

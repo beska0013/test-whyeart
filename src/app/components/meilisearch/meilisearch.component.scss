@@ -1,0 +1,25 @@
+@import '../../../assets/scss/link';
+
+
+
+
+form{
+
+  input{
+    @include size(25px, 50vw);
+    //@include square(100%);
+    min-width: 275px;
+    border: 1px solid $white-700;
+    border-radius: 4px;
+    padding: 1em;
+    font-size: 16px;
+    box-shadow: 0 0 6px 0 rgb(179 179 179 / 28%);
+    &:focus{
+      outline: none;
+      border: 1px solid $white-700;
+    }
+  }
+}
+
+
+

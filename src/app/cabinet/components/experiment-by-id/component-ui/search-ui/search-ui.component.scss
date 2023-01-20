@@ -1,0 +1,32 @@
+@import '../../../../../../assets/scss/link';
+
+
+
+.wrapper{
+  position: relative;
+  .searchResult{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: $white;
+    translate: 0 100%;
+    max-height: 375px;
+    overflow: auto;
+    li{
+      padding: .25rem .5rem;
+      cursor: pointer;
+      &:hover{
+        background-color:$white-100;
+      }
+      .title{
+        @include font($noto-sans-jp-font, $main-color, 14px, 700);
+      }
+      .subTitle{
+        @include font($noto-sans-jp-font, $main-color-500, 12px, 500);
+      }
+    }
+  }
+}
+
+

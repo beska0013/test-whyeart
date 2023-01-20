@@ -1,0 +1,28 @@
+
+
+<div class="cards-wrapper">
+  <div class="card" *ngFor="let item of data;trackBy:trackby">
+    <div class="card-img"></div>
+    <div class="card-content">
+      <h2 class="card-title" [innerHTML]="item.question"></h2>
+      <h4 class="card-subTitle" [innerHTML]= item.id></h4>
+      <div class="card-style">
+        <h3 class="card-type"
+            [style]="{'background-color': tagColorConf[item.type.toLowerCase()].bgColor}"
+            [innerHTML]= item.type></h3>
+        <h3 class="card-state"
+            [class]="{'success': item.run_state === 'finished', 'runing': item.run_state === 'running'}"
+            [innerHTML]= item.run_state></h3>
+      </div>
+      <div class="card-controll">
+        <a [routerLink]="['shinyApp', item.run_id, !!item.origin?.id ? item.origin?.id : item.id]">Details</a>
+        <button (click)="copyLink(item.run_id, !!item.origin?.id ? item.origin?.id : item.id)">Copy Link</button>
+      </div>
+    </div>
+    <div class="card-run-state" *ngIf="item.run_state === 'running'">
+      <app-loader [type]="'bar'"></app-loader>
+    </div>
+  </div>
+</div>
+
+

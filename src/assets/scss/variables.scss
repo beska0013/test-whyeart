@@ -1,0 +1,56 @@
+
+
+
+$dark_blue-300: rgb(3,24,29);
+$dark_blue-500:#172436;
+$white: #FFFFFF;
+$white-100: #f5f5f5;
+$white-500: #ebebeb;
+$white-600: #d7d2d2;
+$white-700: #bcbcbc;
+
+$black-500: #0B0B0B;
+$black-600: #070707;
+
+$blue-400: rgb(38, 128, 235);
+$pink-600: #b023b2;
+$main-color: #000000;
+$main-color-500: #767676;
+$success: #5AC0E5;
+$error: #FF0000;
+$highlight: #05bef46b;
+//sizes
+
+$header-max-h: 70px;
+$header-min-h: 60px;
+
+$sub-header-h: 60px;
+
+//fonts
+$main-font:'Share Tech Mono', monospace, sans-sherif;
+$secondary-font:'IBM Plex Mono', monospace, sans-sherif;
+$ibm-plex-sans-font:'IBM Plex Sans', monospace, sans-sherif;
+$noto-sans-jp-font:'Noto Sans JP', sans-sherif;
+
+$fm_size_desk-32: 2vw;
+$fm_size_desk-24: 1.75vw;
+$fm_size_desk-20: 1.55vw;
+$fm_size_desk-16: 1.1vw;
+$fm_size_desk-14: .9vw;
+
+
+$padding-0-30: 0 30px;
+
+$mx-content-width: 1200px;
+$mx-exp-content-width: 1360px;
+
+
+//@media screen and (min-width: 1600px) {
+//
+//  $fm_size_desk_text_main: 24px;
+//  $fm_size_desk__sub_text: 20px;
+//  $fm_size_desk__title: 32px;
+//}
+
+$main-border: 1px solid #bcbcbc;
+$border-radius-4px: 4px;

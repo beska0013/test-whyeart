@@ -1,0 +1,81 @@
+@import "../../../../../../assets/scss/link";
+
+.overlay{
+  @include flex(center);
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  z-index: 999;
+  padding: 2rem;
+  animation: show_modal .3s ease-in-out;
+  overflow: hidden;
+  &.overlay_hide{
+    animation: hide_modal .3s ease-in-out .2s forwards ;
+    .image_container{
+      animation: hide_image_container .3s ease-in-out  forwards;
+    }
+  }
+  .image_container{
+    @include flex(center);
+    @include size(100%, 100%);
+    padding: 1rem;
+    position: relative;
+    animation: image_container .3s ease-in-out;
+    img{
+      @include size(auto, 100%);
+      max-width: 1675px;
+
+    }
+  }
+   button{
+     @include square(40px);
+     position: absolute;
+     top:0;
+     right: 0;
+     cursor: pointer;
+     background-color: transparent;
+     background-image: url("../../../../../../assets/images/svg/closeX.svg");
+     background-repeat: no-repeat;
+     background-position: center;
+     background-size: cover;
+     border: none;
+   }
+}
+
+
+
+@keyframes hide_modal {
+  to{
+    background-color: transparent;
+  }
+
+}
+@keyframes hide_image_container {
+  to{
+    translate: 0 50%;
+    opacity: 0;
+  }
+
+}
+
+@keyframes show_modal {
+  0% {
+    background-color: transparent;
+  }
+  100% {
+    background-color: rgba(0, 0, 0, 0.75);
+  }
+}
+
+@keyframes image_container {
+  0% {
+    translate: 0 50%;
+    opacity: 0;
+  }
+  100% {
+    translate: 0 0;
+    opacity: 1;
+  }
+}
+
+

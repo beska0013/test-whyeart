@@ -1,0 +1,30 @@
+
+
+
+<ngt-canvas>
+  <ngt-ambient-light  intensity="0.5"></ngt-ambient-light>
+
+
+  <ngt-mesh
+    [scale]="brainMinScale"
+    (click)="onDrag($event)"
+    (beforeRender)="onBeforeBrainRender($event)">
+    <ng-container *ngIf="model$ | async as model">
+      <ngt-primitive [object]="model.scene" ></ngt-primitive>
+    </ng-container>
+  </ngt-mesh>
+  <ngt-mesh  [scale]="overlayMinScale"
+             *ngIf="overlayFinish"
+             (ready)="onOverlayLoad($event)"
+             (beforeRender)="onBeforeOverlayRender($event)">
+    <ng-container>
+      <ngt-box-geometry [args]="[6.5, 4, 3.5]"></ngt-box-geometry>
+    </ng-container>
+  </ngt-mesh>
+
+
+
+
+<!-- <ngt-soba-orbit-controls [enablePan]="scene_enablePan"-->
+<!--                          [enableZoom]="scene_enableZoom"></ngt-soba-orbit-controls>-->
+</ngt-canvas>

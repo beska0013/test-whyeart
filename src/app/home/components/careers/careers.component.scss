@@ -1,0 +1,9 @@
+
+@import "../../../../assets/scss/link";
+
+section{
+  @include square(100%);
+  @include flex(between);
+
+
+}

@@ -1,0 +1,87 @@
+@import "../../../../../../assets/scss/link";
+
+
+.user_exp{
+  //@include flex(center, column);
+  //gap: .5em;
+  padding: 0.5rem;
+  //display: grid;
+  //grid-template-columns: 200px 1fr;
+
+  .user_exp_content{
+    @include flex(center);
+    margin: 0 0 .5em 0;
+    ul{
+      @include flex(start);
+      gap: .5em;
+      li{
+        h3{
+          @include font($noto-sans-jp-font, $main-color, 14px, 700);
+          span{
+            &.item_name{
+              color: $main-color-500;
+            }
+            &.item_status{
+              //@include font($noto-sans-jp-font, #fa0808, 12px, 500);
+              color: #fa0808;
+              //background-color: #fa0808;
+              //padding: .25em 1em;
+              //border-radius: 15px;
+              &.success{
+                //background-color: #00b300;
+                color: #00b300;
+              }
+            }
+          }
+        }
+        a{
+          @include font($noto-sans-jp-font,  $blue-400, 14px, 400);
+          transition: all .3s ease-in-out;
+          padding: .25em .5em;
+          border-radius: 15px;
+          translate: -.5em 0;
+          //&:hover{
+          //  transition: all 0.3s ease-in-out;
+          //  background-color: $pink-600;
+          //  color: $white;
+          //}
+        }
+        button{
+          @include font($noto-sans-jp-font,  $blue-400, 12px, 400);
+          background-color: $blue-400;
+          border: 1px solid $blue-400;
+          border-radius: 4px;
+          padding:.25em 0.5em;
+          text-transform: capitalize;
+          transition: all 0.3s ease-in-out;
+          font-weight: 600;
+          color: #FFFFFF;
+          cursor: pointer;
+          //&:hover{
+          //  transition: all 0.3s ease-in-out;
+          //  background-color: $white;
+          //  color: $blue-400;
+          //}
+        }
+      }
+      &.disabled{
+        li{
+          a{
+            color: $white-700;
+            cursor: not-allowed;
+            pointer-events: none;
+          }
+          button,button[disabled]{
+            background-color: $white-700;
+            border: 1px solid $white-700;
+            color: $white;
+            cursor: not-allowed;
+            pointer-events: none;
+          }
+        }
+      }
+    }
+  }
+
+
+}

@@ -1,0 +1,29 @@
+
+
+
+
+$animation-delay:0,1,2,3;
+
+@each $delay in $animation-delay{
+  .fadeIn-#{$delay}{
+    translate: 0 100px;
+    opacity: 0;
+    animation: fade-in 1.5s ease-in-out forwards ;
+    animation-delay: calc(($delay/4)) + .1s;
+  }
+}
+
+
+@keyframes ripple {
+  to {
+    scale: 4;
+    opacity: 0;
+  }
+}
+
+@keyframes fade-in {
+  to{
+    translate: 0 0;
+    opacity: 1;
+  }
+}

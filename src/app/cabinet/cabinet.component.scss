@@ -1,0 +1,32 @@
+@import "../../assets/scss/link";
+
+header{
+  @include size($header-min-h, 100%);
+  @include flex(between);
+  background-color: $white;
+  padding: $padding-0-30;
+  .logo{
+    @include flex(start);
+    cursor: pointer;
+    gap: .25rem;
+    img{ @include size(40px, 50px) }
+    .logo_name{ @include font($main-font, $main-color, 16px,500) }
+  }
+  nav{
+    @include flex(start);
+    gap: 2rem;
+    a{
+      @include font($secondary-font, $main-color-500, 14px, 500);
+      transition: color .3s ease-in-out;
+      text-transform: capitalize;
+    }
+    span{
+      @include font($secondary-font, $main-color-500, 14px, 500);
+    }
+  }
+}
+main{
+  @include size(calc(100% - $header-min-h), 100%);
+  background-color: $white-100;
+  overflow: hidden;
+}

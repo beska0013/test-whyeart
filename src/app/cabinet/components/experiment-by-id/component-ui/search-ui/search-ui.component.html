@@ -1,0 +1,11 @@
+<div class="wrapper">
+  <app-meilisearch (meiliOutput)="onMeiliOutput($event)"
+                   [placeHolder]="'Search All'"
+                   (searchStr)="onSearchStrChange($event)"></app-meilisearch>
+  <ul class="searchResult" *ngIf="$searchRes | async as res">
+    <li *ngFor="let item of res" (click)="onChoose(item.origin.id, item.origin.title)">
+      <h5 class="title" [innerHTML]="item.title"></h5>
+      <h6 class="subTitle" [innerHTML]="item.id"></h6>
+    </li>
+  </ul>
+</div>

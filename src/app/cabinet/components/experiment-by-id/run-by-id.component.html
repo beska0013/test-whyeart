@@ -1,0 +1,31 @@
+
+
+<div class="nav_control">
+  <button [disabled]="run_btnState">Run A Novel Experiment $100</button>
+  <button [disabled]="audit_btnState">Audit experiment</button>
+  <button>Download Survey</button>
+  <button>Open in ShinyApp</button>
+  <app-search-ui (chosenItem)="onItemChoose($event)"></app-search-ui>
+</div>
+
+  <section>
+    <div class="wrapper">
+      <ul class="exp-nav">
+        <li *ngFor="let exp of expdata;index as i"
+        (click)="onExperimentChoose(i)"
+        [class]="{'active_exp': exp.active | async}">
+          Experiment {{i + 1}}
+        </li>
+      </ul>
+      <div class="exp-content">
+
+      </div>
+    </div>
+<!--    <app-exp-by-id-ui-->
+<!--      [data]="data"-->
+<!--      (cardClickOutput)="onCardClick($event)"></app-exp-by-id-ui>-->
+  </section>
+
+
+
+<app-run-image-modal *ngIf="$url | async as url" [mediaUrl]="url" (onClose)="onModalCloseClisk()"></app-run-image-modal>

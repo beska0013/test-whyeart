@@ -1,0 +1,23 @@
+
+
+<div class="nav_control">
+  <app-runing-exp *ngIf="runingExp as data"
+                  [runningExp]="data"></app-runing-exp>
+  <app-meilisearch (meiliOutput)="onMeiliOutput($event)"
+                   [searchOptions]="experimentsSearchOpt"
+                   [searchIndexName]="expIndexName"></app-meilisearch>
+</div>
+
+<section>
+  <div class="pg-content">
+    <app-exp-list-ui *ngIf="experiment_list | async as list; else notFound"
+                     (copyOutput)="onCopyOutput($event)"
+                     [data]="list"></app-exp-list-ui>
+    <ng-template #notFound>
+        <h2 class="notFound">Not found</h2>
+    </ng-template>
+  </div>
+  <app-notification-modal *ngIf="$notification | async as message" [message]="message" (close)="onModalClose()"></app-notification-modal>
+
+</section>
+

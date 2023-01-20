@@ -1,0 +1,66 @@
+@import "../../../../assets/scss/link";
+
+
+
+//
+//.content_box{
+//  width: 50%;
+//  @include flex(start, column);
+//  //align-items: flex-start;
+//  gap: 1em;
+//  h2{
+//    about_text-align: center;
+//  }
+//  .content_title{
+//    @include font($main-font, $main-color, 32px,600)
+//  }
+//  .content{
+//    @include font($main-font, $main-color, 24px,400)
+//  }
+//  .sub_content{
+//    @include font($main-font, $main-color, 20px,400)
+//  }
+//}
+
+
+//section{
+//  @include square(100%);
+//  @include flex(between);
+  //position: relative;
+  .sec-half{
+    @include flex(center, column);
+    gap: 4rem;
+    z-index: 1;
+    height: 100%;
+    //.main-about_text-content{
+    //  h2{
+    //    color: #FFFFFF;
+    //  }
+    //}
+
+    &:nth-child(1){
+      width: 40%;
+    }
+    &:nth-child(2){
+      width: 60%;
+    }
+  //}
+  //&:before{
+  //  position: absolute;
+  //  content:'';
+  //  height: 0;
+  //  width: 55%;
+  //  left: 0;
+  //  top: 0;
+  //  translate: -15% 0;
+  //  background-color: #000000;
+  //  animation: grow .6s ease-in-out forwards;
+  //}
+
+}
+
+//@keyframes grow {
+//  to{
+//    height: 100%;
+//  }
+//}

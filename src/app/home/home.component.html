@@ -1,0 +1,37 @@
+
+<header class="main-p-v">
+  <button class="btn-mob_menu"
+          [class]="{'btn-close-mob_menu': btnMob}"
+          (click)="burgerBtnHandler()">
+             <span class="burger-menu">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+             </span>
+  </button>
+  <nav [class]="{'show_mob_nav': btnMob}">
+    <a (click)="scrollTo($event,  aboutSec)">About</a>
+    <a (click)="scrollTo($event,  careersSec)">Careers</a>
+    <a (click)="scrollTo($event,  contactSec)">Contact</a>
+  </nav>
+</header>
+
+<main class="main-p-v">
+  <section class="hero_sec">
+    <app-three-brain-bg></app-three-brain-bg>
+    <app-hero></app-hero>
+  </section>
+  <section class="about_sec" #about>
+    <app-about></app-about>
+  </section>
+  <p class="divide_line" #aboutSecLine></p>
+  <section class="careers_sec" #careers>
+    <app-careers></app-careers>
+  </section>
+  <p class="divide_line" #carerrsSecLine></p>
+  <section class="contact_sec" #contact>
+    <app-contact></app-contact>
+  </section>
+</main>
+
+<footer></footer>

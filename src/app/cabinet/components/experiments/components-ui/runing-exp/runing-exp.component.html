@@ -1,0 +1,33 @@
+<div class="user_exp">
+
+
+
+  <div class="user_exp_content">
+    <ul>
+      <li>
+        <h3>
+          Experiment Name: <span class="item_name">{{runningExp.configs.wandb_name}}</span>
+        </h3>
+      </li>
+      <li>
+        <h3>
+          Status:  <span class="item_status"
+                             [class]="{'success': !checkState(runningExp.run_state)}">
+          {{runningExp.run_state}}
+        </span>
+        </h3>
+      </li>
+    </ul>
+
+    <ul [class]="{'disabled':  checkState(runningExp.run_state)}">
+      <li>
+        <a href="#">Detailes</a>
+      </li>
+      <li>
+        <button [disabled]="checkState(runningExp.run_state)">Copy Link</button>
+      </li>
+
+    </ul>
+  </div>
+  <app-loader *ngIf="checkState(runningExp.run_state)"  [type]="'bar'"></app-loader>
+</div>

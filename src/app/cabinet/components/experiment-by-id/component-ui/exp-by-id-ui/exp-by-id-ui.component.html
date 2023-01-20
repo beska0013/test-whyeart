@@ -1,0 +1,93 @@
+<section>
+  <div class="exp-header">
+    <h2>RUN ID: {{data.configs.wandb_id}}</h2>
+    <h2>Title: {{data.configs.wandb_name}}</h2>
+
+    <button (click)="getExperimentDesign()">Download Survey</button>
+    <button (click)="sendSurveyToShinyApp()">Open in ShinyApp</button>
+  </div>
+
+  <div class="exp-content">
+
+    <div *ngIf="mediaUrlExist(data.summary.Attribute_Importance_1?.filenames[0])" class="card"
+         (click)="onCardClick(mediaUrl(data.summary.Attribute_Importance_1?.filenames[0]))" >
+      <div class="card-img">
+        <img [src]="mediaUrl(data.summary.Attribute_Importance_1?.filenames[0])" alt="Attribute_Importance_1">
+      </div>
+      <div class="card-title">
+        <h3>Attribute Importance 1</h3>
+      </div>
+    </div>
+    <div *ngIf="mediaUrlExist(data.summary.Attribute_Importance_2?.filenames[0])" class="card"
+         (click)="onCardClick(mediaUrl(data.summary.Attribute_Importance_2?.filenames[0]))">
+      <div class="card-img">
+        <img [src]="mediaUrl(data.summary.Attribute_Importance_2?.filenames[0])" alt="Attribute_Importance_2">
+      </div>
+      <div class="card-title">
+        <h3>Attribute Importance 2</h3>
+      </div>
+    </div>
+    <div *ngIf="mediaUrlExist(data.summary.Relative_Attribute_Importance_1?.filenames[0])" class="card"
+         (click)="onCardClick(mediaUrl(data.summary.Relative_Attribute_Importance_1?.filenames[0]))">
+      <div class="card-img">
+        <img [src]="mediaUrl(data.summary.Relative_Attribute_Importance_1?.filenames[0])" alt="Relative_Attribute_Importance_1">
+      </div>
+      <div class="card-title">
+        <h3>Relative Attribute Importance 1
+        </h3>
+      </div>
+    </div>
+
+    <div *ngIf="mediaUrlExist(data.summary.Relative_Attribute_Importance_2?.filenames[0])" class="card"
+         (click)="onCardClick(mediaUrl(data.summary.Relative_Attribute_Importance_2?.filenames[0]))">
+      <div class="card-img">
+        <img [src]="mediaUrl(data.summary.Relative_Attribute_Importance_2?.filenames[0])" alt="Relative_Attribute_Importance_2">
+      </div>
+      <div class="card-title">
+        <h3>Relative Attribute Importance 2
+        </h3>
+      </div>
+    </div>
+    <div *ngIf="mediaUrlExist(data.summary.Attribute_Levels_Part_Worth_1?.filenames[0])" class="card"
+         (click)="onCardClick(mediaUrl(data.summary.Attribute_Levels_Part_Worth_1?.filenames[0]))">
+      <div class="card-img">
+        <img [src]="mediaUrl(data.summary.Attribute_Levels_Part_Worth_1?.filenames[0])" alt="Attribute_Levels_Part_Worth_1">
+      </div>
+      <div class="card-title">
+        <h3>Attribute Levels Part Worth 1
+        </h3>
+      </div>
+    </div>
+
+    <div *ngIf="mediaUrlExist(data.summary.Attribute_Levels_Part_Worth_2?.filenames[0])" class="card"
+         (click)="onCardClick(mediaUrl(data.summary.Attribute_Levels_Part_Worth_2?.filenames[0]))">
+      <div class="card-img">
+        <img [src]="mediaUrl(data.summary.Attribute_Levels_Part_Worth_2?.filenames[0])" alt="Attribute_Levels_Part_Worth_2">
+      </div>
+      <div class="card-title">
+        <h3>Attribute Levels Part Worth 2
+        </h3>
+      </div>
+    </div>
+
+    <div *ngIf="mediaUrlExist(data.summary.AMCE_1?.filenames[0])" class="card"
+         (click)="onCardClick(mediaUrl(data.summary.AMCE_1?.filenames[0]))">
+      <div class="card-img">
+        <img [src]="mediaUrl(data.summary.AMCE_1?.filenames[0])" alt="AMCE_1">
+      </div>
+      <div class="card-title">
+        <h3>AMCE 1</h3>
+      </div>
+    </div>
+    <div *ngIf="mediaUrlExist(data.summary.AMCE_2?.filenames[0])" class="card"
+         (click)="onCardClick(mediaUrl(data.summary.AMCE_2?.filenames[0]))">
+      <div class="card-img">
+        <img [src]="mediaUrl(data.summary.AMCE_2.filenames[0])" alt="AMCE-2">
+      </div>
+      <div class="card-title">
+        <h3>AMCE 2</h3>
+      </div>
+    </div>
+  </div>
+
+</section>

@@ -1,0 +1,186 @@
+@import "../../assets/scss/link";
+
+
+
+
+header{
+  @include flex(end);
+  @include size(10vh, 100%);
+  @include max-size($header-max-h, 100%);
+  @include min-size($header-min-h, 100%);
+  position: fixed;
+  z-index: 10;
+  nav{
+    @include font($main-font, $main-color, $fm_size_desk-20,400);
+    @include flex(end);
+    gap: 1em;
+    a{
+      cursor: pointer;
+    }
+  }
+}
+
+main{
+  @include flex(center, column);
+  overflow-x: hidden;
+
+  .divide_line{
+    @include font($main-font, $main-color, $fm_size_desk-16,400);
+    overflow: hidden;
+    max-width: 1200px;
+    margin: 2em 0;
+    width: 100%;
+  }
+  section{
+    @include flex(center, column);
+    position: relative;
+    &.hero_sec{
+      @include min-size(100vh,100%);
+      @include max-size(100%,100%);
+
+    }
+  }
+}
+
+footer{
+  @include flex(end);
+  @include size(10vh, 100%);
+  @include max-size($header-max-h, 100%);
+  @include min-size($header-min-h, 100%);
+}
+
+app-three-brain-bg{
+  width: 80%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: -15%;
+  z-index: 0;
+}
+
+.main-p-v{
+  padding: 0 150px;
+}
+
+.btn-mob_menu{
+  display: none;
+}
+
+@media screen and (max-width: 768px){
+  .btn-mob_menu{
+    display: block;
+    transition: all .3s ease-in-out;
+    background-color: transparent;
+    padding: 1vw;
+    border: none;
+    z-index: 9;
+    .burger-menu{
+      @include flex(start,column);
+      transition: all .3s ease-in-out;
+      span{
+        transition: all .3s ease-in-out;
+        @include size(2px, 19px);
+        background-color: #000000;
+        border-radius: 2px;
+        &:nth-child(2){
+          margin: 3px 0;
+        }
+      }
+    }
+    &.btn-show{
+      .burger-menu{
+        span{
+          transition: all .3s ease-in-out;
+          background-color: #FFFFFF;
+        }
+      }
+    }
+  }
+  .btn-close-mob_menu{
+    .burger-menu{
+      transition: all .3s ease-in-out;
+      span{
+        transition: all .3s ease-in-out;
+        background-color: #FFFFFF;
+        &:nth-child(1){
+          align-self: flex-start;
+          transform: rotate(45deg) translate(2px, 0);
+        }
+        &:nth-child(3){
+          align-self: flex-end;
+          transform:rotate(45deg) translate(-2px, 0);
+        }
+        &:nth-child(2){
+          transform:rotate(-45deg);
+        }
+        &:nth-child(odd){
+          width: 9px;
+        }
+      }
+    }
+  }
+  .main-p-v{
+    padding: 0 15px;
+  }
+  app-three-brain-bg{
+    @include size(60%, 100%);
+    right: 0;
+  }
+  header{
+    @include flex(start);
+    nav{
+      @include flex(center, column);
+      @include size(100vh, 50vw);
+      position: absolute;
+      left: 0;
+      top: 0;
+      translate:  -100% 0;
+      transition: all .3s ease-in-out;
+      align-items: flex-start;
+      font-size: 20px;
+      background-color: #000000;
+      padding: 0 15px;
+      //display: none;
+      a{
+        color: #FFFFFF;
+      }
+      &.show_mob_nav{
+        translate:  0 0;
+        transition: all .3s ease-in-out;
+      }
+    }
+  }
+  main{
+    section{
+      &.hero_sec{
+        justify-content: flex-end;
+        padding: 15px 0 100px 0;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1020px){
+  .main-p-v{
+    padding: 0 15px;
+  }
+  main{
+    .divide_line{
+      font-size: 16px;
+    }
+  }
+};
+
+@media screen and (min-width: 1600px){
+  header{
+    nav{
+      font-size: 20px
+    }
+  }
+}
+
+@media screen and (min-width: 1920px){
+  .main-p-v{
+    padding: 0 150px;
+  }
+};

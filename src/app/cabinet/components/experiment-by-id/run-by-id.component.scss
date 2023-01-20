@@ -1,0 +1,68 @@
+@import '../../../../assets/scss/link';
+
+
+.nav_control{
+  @include flex(center);
+  width: 100%;
+  padding: 1rem 0;
+  background-color: $white;
+  box-shadow: 0 0 6px 0 rgb(179 179 179 / 28%);
+  gap: 1rem;
+  button{
+    font-family: $noto-sans-jp-font;
+    background-color: $success;
+    border: 1px solid $blue-400;
+    border-radius: 4px;
+    padding: 0.5em;
+    text-transform: capitalize;
+    font-weight: 600;
+    color: #FFFFFF;
+    cursor: pointer;
+    &[disabled]{
+      background-color: $white-500;
+      border: 1px solid $white-500;
+      color: $white;
+      cursor: not-allowed;
+    }
+  }
+}
+
+section{
+  @include flex(center);
+  .wrapper{
+    display: grid;
+    max-width: $mx-exp-content-width;
+    width: 100%;
+    grid-template-columns: 10% 1fr;
+    gap: .5rem;
+    padding: 1rem;
+    .exp-nav{
+      @include flex(center,column);
+      gap: .25rem;
+      li{
+       @include font($noto-sans-jp-font, $main-color, $fm_size_desk-14,600);
+       width: 100%;
+       //background-color: $white;
+       //border-radius: $border-radius-4px;
+       //border: $main-border;
+       padding: .25em 1em;
+       cursor: pointer;
+       transition: all .3s ease-in-out;
+        &:hover{
+          transition: all .3s ease-in-out;
+          background-color: $black-500;
+          color: $white;
+        }
+        &.active_exp{
+          background-color: $black-500;
+          color: $white;
+        }
+      };
+    }
+    .exp-content{
+      background-color: $white;
+      border-radius: $border-radius-4px;
+      border: $main-border;
+    }
+  }
+}

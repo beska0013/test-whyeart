@@ -1,0 +1,153 @@
+@import "../../../../assets/scss/link";
+
+
+
+
+
+.launchlist-widget{
+  width: 100%;
+}
+
+.hero-content{
+    @include flex(start, column);
+    align-items: flex-start;
+    width: 50%;
+    max-width: 640px;
+    position: relative;
+    z-index: 1;
+    h2{
+      @include font($main-font, $main-color, $fm_size_desk-24,400);
+      text-shadow: 0 0 2px #FFFFFF;
+      margin: 2rem 0;
+    }
+    pre{
+      font-size: 1vw;
+      white-space: pre;
+      font-weight: 900;
+    }
+    form{
+      @include flex(between);
+      @include size(6vh, 100%);
+      @include max-size(3rem, 100%);
+      @include min-size(40px, 100%);
+      position: relative;
+      align-items: stretch;
+      gap: 1.5rem;
+      input{
+        flex: 3;
+        height: 100%;
+        padding: 0 1em;
+        min-width: 200px;
+        border: 2px solid #000000;
+        font-size: $fm_size_desk-16;
+        font-weight: 600;
+        color: #858484;
+        font-family: 'Poppins', sans-serif;
+      }
+      button{
+        flex: 1;
+        position: relative;
+        overflow: hidden;
+        color: #FFFFFF;
+        background-color:  #000000;
+        font-family: 'Poppins', sans-serif;
+        font-size: $fm_size_desk-14;
+        font-weight: 600;
+        text-transform: capitalize;
+        height: 100%;
+        padding: 0 1em;
+        border: 2px solid #000000;
+        cursor: pointer;
+        transition: all .3s ease-in-out;
+        &:disabled{
+          opacity: .1;
+          pointer-events: none;
+        }
+        &:hover{
+          transition: all .3s ease-in-out;
+          background-color: transparent;
+          color:  #000000;
+        }
+        .ripple {
+          @include square(100%);
+          position: absolute;
+          border-radius: 50%;
+          scale: 0;
+          background-color: #000000;
+          &.ripple_animate{
+            animation: ripple .6s linear;
+          }
+        }
+      }
+      .notification-wrapper{
+        @include size(20px, 100%);
+        position: absolute;
+        bottom: 0;
+        translate: 0 150%;
+      }
+    }
+}
+
+
+@media screen and (min-width: 1600px) {
+  .hero-content{
+    h2{
+      font-size: 32px;
+    }
+    pre{
+      font-size: 16px;
+    }
+    form{
+      input{
+        font-size: 16px;
+      }
+      button{
+        font-size: 16px;
+      }
+
+    }
+  };
+}
+
+@media screen and (max-width: 768px){
+  .hero-content{
+    @include flex(center, column);
+    //align-items: flex-start;
+    width: 100%;
+    max-width: 100%;
+    //z-index: 1;
+    h2{
+      font-size: 16px;
+      text-align: center;
+    }
+    pre{
+      font-size: 2vw;
+      font-weight: 800;
+    }
+    form{
+      @include flex(center, column);
+      @include size(inherit, 100%);
+      @include max-size(none, 500px);
+      @include min-size(none, 250px);
+      gap: 1rem;
+      input{
+        @include size(40px, 100%);
+        flex: none;
+        font-size: 14px;
+
+      }
+      button{
+        @include size(40px, 100%);
+        flex: none;
+        font-size: 14px;
+        font-weight: 600;
+      }
+      //.notification-wrapper{
+      //  @include size(20px, 100%);
+      //  position: absolute;
+      //  bottom: 0;
+      //  translate: 0 150%;
+      //}
+    }
+  }
+}

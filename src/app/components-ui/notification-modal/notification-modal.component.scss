@@ -1,0 +1,40 @@
+@import '../../../assets/scss/link';
+
+.modal_wrapper{
+  @include flex(center);
+  padding: 1rem;
+  position: fixed;
+  top: 0;
+  left:50%;
+
+  .modal{
+    background-color: $black-500;
+    padding: 1rem;
+    border-radius: .25rem;
+    border: 1px solid $black-500;
+    box-shadow: 0 0 6px 0 rgb(179 179 179 / 28%);
+    p{
+      @include font($main-font, $white, $fm_size_desk-14,400);
+    }
+  }
+}
+
+.modal-open{
+  translate: -50% -100%;
+  animation: show_modal 0.3s ease-in-out forwards;
+}
+.close-modal{
+  translate: -50% 0%;
+  animation: close_modal 0.3s  ease-in-out forwards;
+}
+
+@keyframes show_modal {
+  to{
+    translate: -50% 0%;
+  }
+}
+@keyframes close_modal {
+  to{
+    translate: -50% -100%;
+  }
+}

@@ -1,0 +1,58 @@
+@import "../../../../assets/scss/link";
+
+.nav_control{
+  @include flex(center, column);
+  width: 100%;
+  padding: 1rem 0;
+  background-color: $white;
+  box-shadow: 0 0 6px 0 rgb(179 179 179 / 28%);
+}
+section{
+  @include flex(center,column);
+  @include size(calc(100% - 66px), 100%);
+  overflow: auto;
+  padding: 1rem;
+  &::-webkit-scrollbar-thumb{
+    background-color: $white-700;
+  }
+  &::-webkit-scrollbar{
+    width: 8px;
+  }
+  &::-webkit-scrollbar-track{
+    background-color: transparent;
+  }
+  //.pg-header{
+  //  @include flex(center, column);
+  //  width: 100%;
+  //  max-width: $mx-content-width;
+  //  & *{
+  //    width: 100%;
+  //  }
+  //  }
+  .pg-content{
+    @include flex(start);
+    @include square(100%);
+    max-width: $mx-content-width;
+    & *{
+      height: 100%;
+    }
+   }
+}
+
+@media screen and (max-width: 1200px){
+  section{
+    .pg-content{
+      max-width: 800px;
+    }
+  }
+}
+
+
+
+@media screen and (max-width: 850px){
+  section{
+    .pg-content{
+      max-width: 400px;
+    }
+  }
+}

@@ -1,0 +1,118 @@
+@import "../../../../../../assets/scss/link";
+
+.cards-wrapper{
+  @include flex(start);
+  gap: 1rem;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 0.4rem;
+  .card{
+    @include flex(start);
+    @include size(150px,384px);
+    background-color: $white;
+    border-radius: 4px;
+    border: 1px solid $white-600;
+    box-shadow: 0 0 6px 0 rgb(179 179 179 / 28%);
+    overflow: hidden;
+    position: relative;
+    .card-img{
+      @include square(150px);
+      background-image: url("../../../../../../assets/images/svg/experiment-gear.svg");
+    }
+    .card-content{
+      @include size(100%,calc(100% - 150px));
+      @include flex(center,column);
+
+      padding: .5rem 1rem;
+      align-items: flex-start;
+      gap: .5rem;
+      .card-title{
+        @include font($noto-sans-jp-font, $main-color, 18px, 700);
+        text-transform: capitalize;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+        width: 100%;
+        em {
+          background-color: $highlight;
+          border-radius: 4px;
+          padding: 0.1em;
+          font-style: normal;
+        }
+      }
+      .card-style{
+        @include flex(between);
+        width: 100%;
+        gap: 1rem;
+        .card-type{
+          @include font($noto-sans-jp-font, $white, 12px, 500);
+          background-color: #fa0808;
+          padding: .25em 1em;
+          border-radius: 15px;
+
+        }
+        .card-state{
+          @include font($noto-sans-jp-font, $main-color, 14px, 700);
+          &.success{
+            color: #00b300;
+          }
+          .runing{
+            color: #fa0808;
+          }
+        }
+      }
+      .card-subTitle{
+        @include font($noto-sans-jp-font, $main-color-500, 14px, 500);
+        em {
+          background-color: $highlight;
+          border-radius: 2px;
+          padding: 0.05em;
+          font-style: normal;
+        }
+      }
+      .card-controll{
+        @include flex(between);
+        width: 100%;
+        gap: 1rem;
+        a{
+          @include font($noto-sans-jp-font,  $blue-400, 16px, 400);
+          transition: all .3s ease-in-out;
+          padding: .25em .5em;
+          border-radius: 15px;
+          translate: -.5em 0;
+          &:hover{
+            transition: all 0.3s ease-in-out;
+            background-color: $pink-600;
+            color: $white;
+          }
+        }
+        button{
+          font-family: $noto-sans-jp-font;
+          background-color: $blue-400;
+          border: 1px solid $blue-400;
+          border-radius: 4px;
+          padding:.25em 0.5em;
+          text-transform: capitalize;
+          transition: all 0.3s ease-in-out;
+          font-weight: 600;
+          color: #FFFFFF;
+          cursor: pointer;
+          &:hover{
+            transition: all 0.3s ease-in-out;
+            background-color: $white;
+            color: $blue-400;
+          }
+        }
+      }
+    }
+   .card-run-state{
+     position: absolute;
+     width: 100%;
+     bottom:0;
+     left: 0;
+   }
+  }
+
+}
+
+

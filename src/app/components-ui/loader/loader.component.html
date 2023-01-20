@@ -1,0 +1,10 @@
+
+<ng-container [ngSwitch]="type">
+  <section *ngSwitchCase="'loading'">
+    <h3>loading<span #dots></span></h3>
+  </section>
+
+  <div class="progressbar" *ngSwitchCase="'bar'">
+    <div class="stylization"></div>
+  </div>
+</ng-container>
