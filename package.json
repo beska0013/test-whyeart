@@ -2,7 +2,7 @@
   "name": "why-earth-ui",
   "version": "0.0.0",
   "scripts": {
-    "start:heroku": "ng serve:ssr",
+    "start:heroku": "node dist/why-earth-UI/server/main.js",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
